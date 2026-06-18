@@ -5,394 +5,316 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Anagha Ginesh | Portfolio</title>
 
-    <!-- Tailwind CSS CDN -->
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- React CDN -->
-    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
-    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
-
-    <!-- Babel CDN -->
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#be185d",
+                        secondary: "#ffe4e6"
+                    }
+                }
+            }
+        }
+    </script>
 
     <style>
         html {
             scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
         }
     </style>
 </head>
 
 <body class="bg-gray-50">
 
-<div id="root"></div>
-
-<script type="text/babel">
-
-function App() {
-
-    const [isOpen, setIsOpen] = React.useState(false);
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-
-        const name = e.target.name.value;
-        const email = e.target.email.value;
-        const message = e.target.message.value;
-
-        alert(
-            "Details Submitted!\n\n" +
-            "Name: " + name +
-            "\nEmail: " + email +
-            "\nMessage: " + message
-        );
-
-        e.target.reset();
-    };
-
-    return (
-        <>
-            {/* Navbar */}
-            <nav className="bg-pink-100 shadow-md sticky top-0 z-50">
-
-                <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-
-                    <h1 className="text-2xl font-bold text-rose-800">
-                        Portfolio
-                    </h1>
-
-                    {/* Desktop Menu */}
-                    <ul className="hidden md:flex space-x-8 text-rose-800 font-medium">
-
-                        <li>
-                            <a href="#home" className="hover:text-rose-500">
-                                Home
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="#about" className="hover:text-rose-500">
-                                About
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="#skills" className="hover:text-rose-500">
-                                Skills
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="#projects" className="hover:text-rose-500">
-                                Projects
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="#contact" className="hover:text-rose-500">
-                                Contact
-                            </a>
-                        </li>
-
-                    </ul>
-
-                    {/* Mobile Toggle */}
-                    <button
-                        className="md:hidden text-3xl text-rose-800"
-                        onClick={() => setIsOpen(!isOpen)}
-                    >
-                        ☰
-                    </button>
-
-                </div>
-
-                {/* Mobile Menu */}
-                {
-                    isOpen && (
-
-                        <div className="md:hidden bg-pink-50 px-6 pb-4">
-
-                            <ul className="space-y-4 text-rose-800 font-medium">
-
-                                <li>
-                                    <a href="#home" onClick={() => setIsOpen(false)}>
-                                        Home
-                                    </a>
-                                </li>
-
-                                <li>
-                                    <a href="#about" onClick={() => setIsOpen(false)}>
-                                        About
-                                    </a>
-                                </li>
-
-                                <li>
-                                    <a href="#skills" onClick={() => setIsOpen(false)}>
-                                        Skills
-                                    </a>
-                                </li>
-
-                                <li>
-                                    <a href="#projects" onClick={() => setIsOpen(false)}>
-                                        Projects
-                                    </a>
-                                </li>
-
-                                <li>
-                                    <a href="#contact" onClick={() => setIsOpen(false)}>
-                                        Contact
-                                    </a>
-                                </li>
-
-                            </ul>
-
-                        </div>
-                    )
-                }
-
-            </nav>
-
-            {/* Hero Section */}
-            <section
-                id="home"
-                className="bg-pink-100 py-20"
-            >
-
-                <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-10">
-
-                    <div className="md:w-1/2">
-
-                        <h1 className="text-5xl font-bold text-rose-900 mb-6">
-                            Hi, I'm Anagha Ginesh
-                        </h1>
-
-                        <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-
-                            Electronics and Communication Engineering student,
-                            aspiring web developer and technology enthusiast.
-
-                        </p>
-
-                        <p className="text-gray-600 italic mb-8">
-                            "Every line of code gets me closer to building the web I imagine."
-                        </p>
-
-                        <a
-                            href="#contact"
-                            className="bg-rose-600 text-white px-6 py-3 rounded-lg hover:bg-rose-700 transition"
-                        >
-                            Contact Me
-                        </a>
-
-                    </div>
-
-                    <div className="md:w-1/2 flex justify-center">
-
-                        <img
-                            src="image.JPG"
-                            alt="Profile"
-                            className="w-72 rounded-xl shadow-lg border"
-                        />
-
-                    </div>
-
-                </div>
-
-            </section>
-
-            {/* About */}
-            <section
-                id="about"
-                className="py-20 bg-blue-50"
-            >
-
-                <div className="max-w-4xl mx-auto px-6 text-center">
-
-                    <h2 className="text-4xl font-bold text-rose-900 mb-8">
-                        About Me
-                    </h2>
-
-                    <p className="text-gray-700 leading-8">
-
-                        I am pursuing B.Tech in Electronics and Communication
-                        Engineering at Adi Shankara Institute of Engineering
-                        and Technology, Kalady.
-
-                    </p>
-
-                    <p className="text-gray-700 leading-8 mt-4">
-
-                        This portfolio was developed as part of my
-                        Frontend Web Development Bootcamp journey.
-
-                    </p>
-
-                </div>
-
-            </section>
-
-            {/* Skills */}
-            <section
-                id="skills"
-                className="py-20 bg-yellow-50"
-            >
-
-                <div className="max-w-6xl mx-auto px-6">
-
-                    <h2 className="text-4xl font-bold text-center text-rose-900 mb-12">
-                        Skills
-                    </h2>
-
-                    <div className="grid grid-cols-2 md:grid-cols-5 gap-6">
-
-                        {
-                            ["HTML", "CSS", "JavaScript", "Python", "C++"]
-                            .map((skill) => (
-
-                                <div
-                                    key={skill}
-                                    className="bg-white p-6 rounded-xl shadow text-center font-semibold"
-                                >
-                                    {skill}
-                                </div>
-
-                            ))
-                        }
-
-                    </div>
-
-                </div>
-
-            </section>
-
-            {/* Projects */}
-            <section
-                id="projects"
-                className="py-20 bg-white"
-            >
-
-                <div className="max-w-6xl mx-auto px-6">
-
-                    <h2 className="text-4xl font-bold text-center text-rose-900 mb-12">
-                        Projects
-                    </h2>
-
-                    <div className="grid md:grid-cols-3 gap-8">
-
-                        <div className="bg-pink-50 p-6 rounded-xl shadow">
-                            <h3 className="font-bold text-xl mb-3">
-                                Portfolio Website
-                            </h3>
-
-                            <p>
-                                Personal responsive portfolio built using
-                                HTML, CSS, React and Tailwind CSS.
-                            </p>
-                        </div>
-
-                        <div className="bg-pink-50 p-6 rounded-xl shadow">
-                            <h3 className="font-bold text-xl mb-3">
-                                Smart Street Light Project
-                            </h3>
-
-                            <p>
-                                Waste dumping detection system using
-                                Edge Impulse and ESP32.
-                            </p>
-                        </div>
-
-                        <div className="bg-pink-50 p-6 rounded-xl shadow">
-                            <h3 className="font-bold text-xl mb-3">
-                                Future Projects
-                            </h3>
-
-                            <p>
-                                Exploring IoT, Web Development and
-                                Cybersecurity projects.
-                            </p>
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </section>
-
-            {/* Contact */}
-            <section
-                id="contact"
-                className="py-20 bg-green-50"
-            >
-
-                <div className="max-w-xl mx-auto px-6">
-
-                    <h2 className="text-4xl font-bold text-center text-rose-900 mb-10">
-                        Contact Me
-                    </h2>
-
-                    <form
-                        onSubmit={handleSubmit}
-                        className="bg-white shadow-lg rounded-xl p-8"
-                    >
-
-                        <input
-                            type="text"
-                            name="name"
-                            placeholder="Your Name"
-                            required
-                            className="w-full border p-3 rounded-lg mb-4"
-                        />
-
-                        <input
-                            type="email"
-                            name="email"
-                            placeholder="Your Email"
-                            required
-                            className="w-full border p-3 rounded-lg mb-4"
-                        />
-
-                        <textarea
-                            name="message"
-                            placeholder="Your Message"
-                            rows="4"
-                            required
-                            className="w-full border p-3 rounded-lg mb-6"
-                        ></textarea>
-
-                        <button
-                            type="submit"
-                            className="w-full bg-rose-600 text-white py-3 rounded-lg hover:bg-rose-700"
-                        >
-                            Send Message
-                        </button>
-
-                    </form>
-
-                </div>
-
-            </section>
-
-            {/* Footer */}
-            <footer className="bg-rose-900 text-white text-center py-6">
-
-                <p>
-                    © 2026 Anagha Ginesh. All Rights Reserved.
+    <!-- Navbar -->
+    <nav class="bg-pink-100 shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+
+            <h1 class="text-2xl font-bold text-rose-800">
+                Portfolio
+            </h1>
+
+            <!-- Desktop Menu -->
+            <ul class="hidden md:flex space-x-8 text-rose-800 font-medium">
+                <li><a href="#home" class="hover:text-rose-500">Home</a></li>
+                <li><a href="#about" class="hover:text-rose-500">About</a></li>
+                <li><a href="#skills" class="hover:text-rose-500">Skills</a></li>
+                <li><a href="#projects" class="hover:text-rose-500">Projects</a></li>
+                <li><a href="#contact" class="hover:text-rose-500">Contact</a></li>
+            </ul>
+
+            <!-- Mobile Toggle -->
+            <button id="menu-btn" class="md:hidden text-3xl text-rose-800">
+                ☰
+            </button>
+
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-pink-50 px-6 pb-4">
+            <ul class="space-y-4 text-rose-800 font-medium">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="bg-pink-100 py-20">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-10">
+
+            <div class="md:w-1/2">
+
+                <h1 class="text-5xl font-bold text-rose-900 mb-6">
+                    Hi, I'm Anagha Ginesh
+                </h1>
+
+                <p class="text-lg text-gray-700 mb-6 leading-relaxed">
+                    Electronics and Communication Engineering student,
+                    aspiring web developer and technology enthusiast.
                 </p>
 
-            </footer>
+                <p class="text-gray-600 italic mb-8">
+                    "Every line of code gets me closer to building the web I imagine."
+                </p>
 
-        </>
-    );
-}
+                <a href="#contact"
+                   class="bg-rose-600 text-white px-6 py-3 rounded-lg hover:bg-rose-700 transition">
+                    Contact Me
+                </a>
 
-ReactDOM.createRoot(
-    document.getElementById("root")
-).render(<App />);
+            </div>
 
-</script>
+            <div class="md:w-1/2 flex justify-center">
+
+                <img src="image.JPG"
+                     alt="Profile"
+                     class="w-72 rounded-xl shadow-lg border">
+
+            </div>
+
+        </div>
+    </section>
+        <!-- About Section -->
+    <section id="about" class="py-20 bg-blue-50">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+
+            <h2 class="text-4xl font-bold text-rose-900 mb-8">
+                About Me
+            </h2>
+
+            <p class="text-gray-700 leading-8">
+                I am pursuing B.Tech in Electronics and Communication
+                Engineering at Adi Shankara Institute of Engineering
+                and Technology, Kalady.
+            </p>
+
+            <p class="text-gray-700 leading-8 mt-4">
+                Passionate about technology, I enjoy learning web
+                development, IoT, cybersecurity, and building
+                innovative solutions to real-world problems.
+            </p>
+
+            <p class="text-gray-700 leading-8 mt-4">
+                This portfolio was developed as part of my Frontend
+                Web Development Bootcamp journey and reflects my
+                growing skills and projects.
+            </p>
+
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-yellow-50">
+        <div class="max-w-6xl mx-auto px-6">
+
+            <h2 class="text-4xl font-bold text-center text-rose-900 mb-12">
+                Skills
+            </h2>
+
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-6">
+
+                <div class="bg-white p-6 rounded-xl shadow text-center font-semibold hover:shadow-lg transition">
+                    HTML
+                </div>
+
+                <div class="bg-white p-6 rounded-xl shadow text-center font-semibold hover:shadow-lg transition">
+                    CSS
+                </div>
+
+                <div class="bg-white p-6 rounded-xl shadow text-center font-semibold hover:shadow-lg transition">
+                    JavaScript
+                </div>
+
+                <div class="bg-white p-6 rounded-xl shadow text-center font-semibold hover:shadow-lg transition">
+                    Python
+                </div>
+
+                <div class="bg-white p-6 rounded-xl shadow text-center font-semibold hover:shadow-lg transition">
+                    C++
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-6">
+
+            <h2 class="text-4xl font-bold text-center text-rose-900 mb-12">
+                Projects
+            </h2>
+
+            <div class="grid md:grid-cols-3 gap-8">
+
+                <div class="bg-pink-50 p-6 rounded-xl shadow hover:shadow-xl transition">
+
+                    <h3 class="font-bold text-xl mb-3">
+                        Portfolio Website
+                    </h3>
+
+                    <p class="text-gray-700">
+                        A responsive personal portfolio website built
+                        using HTML, Tailwind CSS and JavaScript to
+                        showcase my profile, skills, and projects.
+                    </p>
+
+                </div>
+
+                <div class="bg-pink-50 p-6 rounded-xl shadow hover:shadow-xl transition">
+
+                    <h3 class="font-bold text-xl mb-3">
+                        Smart Street Light Project
+                    </h3>
+
+                    <p class="text-gray-700">
+                        A waste dumping detection system using ESP32
+                        and Edge Impulse to help maintain cleaner
+                        public spaces.
+                    </p>
+
+                </div>
+
+                <div class="bg-pink-50 p-6 rounded-xl shadow hover:shadow-xl transition">
+
+                    <h3 class="font-bold text-xl mb-3">
+                        Future Projects
+                    </h3>
+
+                    <p class="text-gray-700">
+                        Exploring innovative ideas in IoT,
+                        cybersecurity, web technologies, and embedded
+                        systems for future development.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+        <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-green-50">
+        <div class="max-w-xl mx-auto px-6">
+
+            <h2 class="text-4xl font-bold text-center text-rose-900 mb-10">
+                Contact Me
+            </h2>
+
+            <form id="contact-form"
+                  class="bg-white shadow-lg rounded-xl p-8">
+
+                <input
+                    type="text"
+                    id="name"
+                    placeholder="Your Name"
+                    required
+                    class="w-full border p-3 rounded-lg mb-4 focus:outline-none focus:ring-2 focus:ring-rose-300">
+
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Your Email"
+                    required
+                    class="w-full border p-3 rounded-lg mb-4 focus:outline-none focus:ring-2 focus:ring-rose-300">
+
+                <textarea
+                    id="message"
+                    rows="4"
+                    placeholder="Your Message"
+                    required
+                    class="w-full border p-3 rounded-lg mb-6 focus:outline-none focus:ring-2 focus:ring-rose-300"></textarea>
+
+                <button
+                    type="submit"
+                    class="w-full bg-rose-600 text-white py-3 rounded-lg hover:bg-rose-700 transition">
+                    Send Message
+                </button>
+
+            </form>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-rose-900 text-white text-center py-6">
+
+        <p>
+            © 2026 Anagha Ginesh. All Rights Reserved.
+        </p>
+
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+
+        /* Mobile Menu Toggle */
+
+        const menuBtn = document.getElementById("menu-btn");
+        const mobileMenu = document.getElementById("mobile-menu");
+
+        menuBtn.addEventListener("click", () => {
+            mobileMenu.classList.toggle("hidden");
+        });
+
+        /* Close mobile menu after clicking a link */
+
+        document.querySelectorAll("#mobile-menu a").forEach(link => {
+            link.addEventListener("click", () => {
+                mobileMenu.classList.add("hidden");
+            });
+        });
+
+        /* Contact Form Alert */
+
+        document.getElementById("contact-form").addEventListener("submit", function(e) {
+
+            e.preventDefault();
+
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const message = document.getElementById("message").value;
+
+            alert(
+                "Details Submitted!\n\n" +
+                "Name: " + name +
+                "\nEmail: " + email +
+                "\nMessage: " + message
+            );
+
+            this.reset();
+        });
+
+    </script>
 
 </body>
 </html>
