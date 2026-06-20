@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anagha Ginesh | Portfolio</title>
-
-    <!-- Tailwind CSS -->
+    <title>Anagha Ginesh | Portfolio</title
+                                        
     <script src="https://cdn.tailwindcss.com"></script>
 
     <script>
@@ -30,7 +29,6 @@
 
 <body class="bg-gray-50">
 
-    <!-- Navbar -->
     <nav class="bg-pink-100 shadow-md sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
 
@@ -38,7 +36,7 @@
                 Portfolio
             </h1>
 
-            <!-- Desktop Menu -->
+            
             <ul class="hidden md:flex space-x-8 text-rose-800 font-medium">
                 <li><a href="#home" class="hover:text-rose-500">Home</a></li>
                 <li><a href="#about" class="hover:text-rose-500">About</a></li>
@@ -47,14 +45,13 @@
                 <li><a href="#contact" class="hover:text-rose-500">Contact</a></li>
             </ul>
 
-            <!-- Mobile Toggle -->
+            
             <button id="menu-btn" class="md:hidden text-3xl text-rose-800">
                 ☰
             </button>
 
         </div>
-
-        <!-- Mobile Menu -->
+        
         <div id="mobile-menu" class="hidden md:hidden bg-pink-50 px-6 pb-4">
             <ul class="space-y-4 text-rose-800 font-medium">
                 <li><a href="#home">Home</a></li>
@@ -66,7 +63,6 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
     <section id="home" class="bg-pink-100 py-20">
         <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-10">
 
@@ -102,7 +98,7 @@
 
         </div>
     </section>
-        <!-- About Section -->
+        
     <section id="about" class="py-20 bg-blue-50">
         <div class="max-w-4xl mx-auto px-6 text-center">
 
@@ -131,7 +127,6 @@
         </div>
     </section>
 
-    <!-- Skills Section -->
     <section id="skills" class="py-20 bg-yellow-50">
         <div class="max-w-6xl mx-auto px-6">
 
@@ -166,7 +161,6 @@
         </div>
     </section>
 
-    <!-- Projects Section -->
 <section id="projects" class="py-20 bg-white">
     <div class="max-w-6xl mx-auto px-6">
 
@@ -176,7 +170,7 @@
 
         <div class="grid md:grid-cols-3 gap-8">
 
-    <!-- Project 1 -->
+
     <div class="bg-pink-50 p-6 rounded-xl shadow hover:shadow-xl transition">
 
         <h3 class="font-bold text-xl mb-3">
@@ -198,7 +192,7 @@
 
     </div>
 
-    <!-- Project 2 -->
+
 <div class="bg-pink-50 p-6 rounded-xl shadow hover:shadow-xl transition">
 
     <h3 class="font-bold text-xl mb-3">
@@ -220,7 +214,7 @@
 
 </div>
 
-    <!-- Project 3 -->
+    
     <div class="bg-pink-50 p-6 rounded-xl shadow hover:shadow-xl transition">
 
         <h3 class="font-bold text-xl mb-3">
@@ -245,7 +239,7 @@
 </div>
     </div>
 </section>
-        <!-- Contact Section -->
+        
     <section id="contact" class="py-20 bg-green-50">
         <div class="max-w-xl mx-auto px-6">
 
@@ -288,7 +282,6 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="bg-rose-900 text-white text-center py-6">
 
         <p>
@@ -297,10 +290,7 @@
 
     </footer>
 
-    <!-- JavaScript -->
     <script>
-
-        /* Mobile Menu Toggle */
 
         const menuBtn = document.getElementById("menu-btn");
         const mobileMenu = document.getElementById("mobile-menu");
@@ -309,15 +299,11 @@
             mobileMenu.classList.toggle("hidden");
         });
 
-        /* Close mobile menu after clicking a link */
-
         document.querySelectorAll("#mobile-menu a").forEach(link => {
             link.addEventListener("click", () => {
                 mobileMenu.classList.add("hidden");
             });
         });
-
-        /* Contact Form Alert */
 
         document.getElementById("contact-form").addEventListener("submit", function(e) {
 
